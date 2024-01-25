@@ -14,6 +14,8 @@
 		C97C5C482B5FC547004EE3AF /* YummiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C472B5FC547004EE3AF /* YummiTests.swift */; };
 		C97C5C522B5FC547004EE3AF /* YummiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C512B5FC547004EE3AF /* YummiUITests.swift */; };
 		C97C5C542B5FC547004EE3AF /* YummiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C532B5FC547004EE3AF /* YummiUITestsLaunchTests.swift */; };
+		C97C5C612B5FC661004EE3AF /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C602B5FC661004EE3AF /* Ingredient.swift */; };
+		C97C5C632B5FC77C004EE3AF /* currentIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C622B5FC77C004EE3AF /* currentIngredients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		C97C5C4D2B5FC547004EE3AF /* YummiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YummiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97C5C512B5FC547004EE3AF /* YummiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITests.swift; sourceTree = "<group>"; };
 		C97C5C532B5FC547004EE3AF /* YummiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C97C5C602B5FC661004EE3AF /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		C97C5C622B5FC77C004EE3AF /* currentIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentIngredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				C97C5C382B5FC544004EE3AF /* ContentView.swift */,
 				C97C5C3A2B5FC547004EE3AF /* Assets.xcassets */,
 				C97C5C3C2B5FC547004EE3AF /* Preview Content */,
+				C97C5C602B5FC661004EE3AF /* Ingredient.swift */,
+				C97C5C622B5FC77C004EE3AF /* currentIngredients.swift */,
 			);
 			path = Yummi;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			files = (
 				C97C5C392B5FC544004EE3AF /* ContentView.swift in Sources */,
 				C97C5C372B5FC544004EE3AF /* YummiApp.swift in Sources */,
+				C97C5C632B5FC77C004EE3AF /* currentIngredients.swift in Sources */,
+				C97C5C612B5FC661004EE3AF /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +430,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yummi/Preview Content\"";
+				DEVELOPMENT_TEAM = 89VV3248FH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -450,6 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yummi/Preview Content\"";
+				DEVELOPMENT_TEAM = 89VV3248FH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
