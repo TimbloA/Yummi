@@ -19,10 +19,13 @@ struct ContentView: View {
         case Fruit, Meat, Vegetable, Spice
         var id: Self { self }
     }
+    @State private var category: Category = .Fruit
 
+    @State private var unit: Units = .Kilogram
+    
+    @State private var date = Date()
 
-    @State private var Categories: Category = .Fruit
-
+    
     var body: some View {
         VStack{
             Form{
@@ -51,24 +54,50 @@ struct ContentView: View {
                         TextField("Name",text: $ingredientName)
                         
                         Stepper(
-                                    value: $ingredientQuantity,
-                                    in: range,
-                                    step: step
-                                ) {
-                                    Text("Quantity:\(ingredientQuantity) ")
-                                }
-                        Picker("Category",selection: $Categories) {
-                            Text("Fruit").tag(categories.Fruit)
-                            Text("Meat").tag(categories.Meat)
-                            Text("Vegetable").tag(categories.Vegetable)
-                            Text("Spice").tag(categories.Spice)
+                            value: $ingredientQuantity,
+                            in: range,
+                            step: step
+                        ) {
+                            Text("Quantity:\(ingredientQuantity) ")
                         }
-                        
-                    }
+                        Picker("Category:",selection: $category) {
+                            Text("Fruit").tag(Category.Fruit)
+                            Text("Meat").tag(Category.Meat)
+                            Text("Vegetable").tag(Category.Vegetable)
+                            Text("Spice").tag(Category.Spice)
+                            Text("Dairy").tag(Category.Dairy)
+                        }
+                        Picker("Units:",selection: $unit) {
+                            Text("Kilogram").tag(Units.Kilogram)
+                            Text("Gram").tag(Units.Gram)
+                            Text("Litre").tag(Units.Litre)
+                            Text("Millilitre").tag(Units.Millilitre)
+                            Text("Whole").tag(Units.Whole)
+                        }
+                        DatePicker(
+                            "Expiry Date:",
+                            selection: $date,
+                            displayedComponents: [.date]
+                        )
                     }
                 }
             }
+            VStack {
+                
+                Button("Submit Ingredient", action: {
+                    currIngredients.ingredients.append(Ingredient(name: ingredientName, quantity: ingredientQuantity, unit: unit, category: category, expiryDate: date))
+                    resetDisplay()
+                })
+                }
+            }
         }
+        
+    }
+    func resetDisplay() {
+    ingredientName = ""
+    ingredientQuantity = 0
+    category = Category.Fruit
+    unit = Units.Gram
     }
 }
 
