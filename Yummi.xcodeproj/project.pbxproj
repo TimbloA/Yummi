@@ -16,6 +16,7 @@
 		C97C5C542B5FC547004EE3AF /* YummiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C532B5FC547004EE3AF /* YummiUITestsLaunchTests.swift */; };
 		C97C5C612B5FC661004EE3AF /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C602B5FC661004EE3AF /* Ingredient.swift */; };
 		C97C5C632B5FC77C004EE3AF /* currentIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C5C622B5FC77C004EE3AF /* currentIngredients.swift */; };
+		C9E13C722B6BD04C00B5FA10 /* NewIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E13C712B6BD04C00B5FA10 /* NewIngredientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C97C5C532B5FC547004EE3AF /* YummiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C97C5C602B5FC661004EE3AF /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		C97C5C622B5FC77C004EE3AF /* currentIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentIngredients.swift; sourceTree = "<group>"; };
+		C9E13C712B6BD04C00B5FA10 /* NewIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIngredientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				C97C5C3C2B5FC547004EE3AF /* Preview Content */,
 				C97C5C602B5FC661004EE3AF /* Ingredient.swift */,
 				C97C5C622B5FC77C004EE3AF /* currentIngredients.swift */,
+				C9E13C712B6BD04C00B5FA10 /* NewIngredientView.swift */,
 			);
 			path = Yummi;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				C97C5C392B5FC544004EE3AF /* ContentView.swift in Sources */,
 				C97C5C372B5FC544004EE3AF /* YummiApp.swift in Sources */,
+				C9E13C722B6BD04C00B5FA10 /* NewIngredientView.swift in Sources */,
 				C97C5C632B5FC77C004EE3AF /* currentIngredients.swift in Sources */,
 				C97C5C612B5FC661004EE3AF /* Ingredient.swift in Sources */,
 			);

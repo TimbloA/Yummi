@@ -13,6 +13,7 @@ enum Category: String, CaseIterable, Identifiable {
     case Meat
     case Spice
     case Dairy
+    case Carbohydrates
     var id: Self { self }
 }
 enum Units: String, CaseIterable, Identifiable{

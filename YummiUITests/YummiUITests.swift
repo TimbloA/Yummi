@@ -22,12 +22,22 @@ final class YummiUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+        func testForNextIngredient() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        let collectionViewsQuery = XCUIApplication().collectionViews
+        let nextIngredientButton = collectionViewsQuery/*@START_MENU_TOKEN@*/.buttons["Next Ingredient"]/*[[".cells.buttons[\"Next Ingredient\"]",".buttons[\"Next Ingredient\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        nextIngredientButton.tap()
+//        collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["Name: Banana\nQuantity: 40000\nUnit: Whole\nCategory: Fruit\nExpiry Date: 12/11/2026"]/*[[".cells.staticTexts[\"Name: Banana\\nQuantity: 40000\\nUnit: Whole\\nCategory: Fruit\\nExpiry Date: 12\/11\/2026\"]",".staticTexts[\"Name: Banana\\nQuantity: 40000\\nUnit: Whole\\nCategory: Fruit\\nExpiry Date: 12\/11\/2026\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        nextIngredientButton.tap()
+//        collectionViewsQuery.staticTexts["Name: Apple\nQuantity: 5\nUnit: Whole\nCategory: Fruit\nExpiry Date: 30/04/2024"]
+            
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+            
+            XCTAssertEqual(app.staticTexts, "Name: Apple\nQuantity: 5\nUnit: Whole\nCategory: Fruit\nExpiry Date: 30/04/2024")
     }
 
     func testLaunchPerformance() throws {
