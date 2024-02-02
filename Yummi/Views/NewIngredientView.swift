@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewIngredientView: View {
-    @State private var currIngredients = currentIngredients()
+    @State public var currIngredients = currentIngredients()
     @State private var ingredientName = ""
     @State private var ingredientQuantity = 0
     let range = 1...1000000
