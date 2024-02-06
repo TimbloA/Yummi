@@ -12,5 +12,5 @@ struct Recipe {
     let Name: String
     let Ingredients: [Ingredient]
     var isFavourite: Bool
-    var rating: Double
+    var rating: Int
 }

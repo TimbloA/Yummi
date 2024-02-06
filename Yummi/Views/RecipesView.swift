@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct RecipesView: View {
+    let recipes: [Recipe]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(recipes,id: \.self.Name) { recipe in
+                    RecipeItem(recipe:recipe)
+                }
+                
+            }.navigationTitle("Recipes")
+        }
     }
 }
 
 #Preview {
-    RecipesView()
+    RecipesView(recipes: Recipes.examples)
 }

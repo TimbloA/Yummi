@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State public var currIngredients = currentIngredients()
+    @State var currIngredients = currentIngredients.examples
     @State private var valIngredient = 0
 
     var body: some View {
@@ -16,21 +16,24 @@ struct ContentView: View {
             VStack{
                 Form{
                     VStack(alignment: .leading, spacing:20) {
-                        Text("\(currIngredients.ingredients[valIngredient].displayStats())")
+                        Text("\(currIngredients[valIngredient].displayStats())")
                         
                         
                     }
                     VStack(alignment: .trailing){
                         Button("Next Ingredient", action: {
-                            if valIngredient == (self.currIngredients.ingredients.count)-1{
+                            if valIngredient == (self.currIngredients.count)-1{
                                 valIngredient = -1
                             }
                             valIngredient += 1}).font(.title3).frame(maxWidth: .infinity,alignment:.center)
                     }
                     Section {
-                        VStack{
-                            NavigationLink(destination: NewIngredientView()){
+                        List{
+                            NavigationLink(destination: NewIngredientView(currIngredients: $currIngredients)){
                                 Text("Enter New Ingredient")
+                            }
+                            NavigationLink(destination: RecipesView(recipes: Recipes.examples)){
+                            Text("Recipes")
                             }
                         }
                     }

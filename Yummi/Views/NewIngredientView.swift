@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewIngredientView: View {
-    @State public var currIngredients = currentIngredients()
+    @Binding var currIngredients: [Ingredient]
     @State private var ingredientName = ""
     @State private var ingredientQuantity = 0
     let range = 1...1000000
@@ -68,7 +68,7 @@ struct NewIngredientView: View {
                     
                     Button(submitName, action: {
                         if ingredientName != "" && ingredientQuantity != 0 {
-                            currIngredients.ingredients.append(Ingredient(name: ingredientName, quantity: ingredientQuantity, unit: unit, category: category, expiryDate: date))
+                            currIngredients.append(Ingredient(name: ingredientName, quantity: ingredientQuantity, unit: unit, category: category, expiryDate: date))
                             submitName = "Submitted!"
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 resetDisplay()
@@ -89,5 +89,5 @@ struct NewIngredientView: View {
 }
 
 #Preview {
-    NewIngredientView()
+    NewIngredientView(currIngredients: .constant(currentIngredients.examples))
 }
