@@ -17,6 +17,11 @@ struct RecipesView: View {
                 }
                 
             }.navigationTitle("Recipes")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Image(systemName: "doc.badge.plus")
+                    }
+                }
         }
     }
 }
