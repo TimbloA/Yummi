@@ -13,15 +13,11 @@ struct RecipesView: View {
         NavigationView {
             List {
                 ForEach(recipes,id: \.self.Name) { recipe in
-                    RecipeItem(recipe:recipe)
-                }
-                
-            }.navigationTitle("Recipes")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(systemName: "doc.badge.plus")
+                    NavigationLink(destination: SingleRecipeView(recipe: recipe)){
+                        RecipeItem(recipe:recipe)
                     }
                 }
+            }.navigationTitle("Recipes")
         }
     }
 }

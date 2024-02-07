@@ -8,7 +8,7 @@
 import Foundation
 
 enum Category: String, CaseIterable, Identifiable {
-    case Fruit
+    case Fruit = "Fruit"
     case Vegetable
     case Meat
     case Spice
@@ -17,11 +17,11 @@ enum Category: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 enum Units: String, CaseIterable, Identifiable{
-    case Kilogram
-    case Gram
-    case Litre
-    case Millilitre
-    case Whole
+    case Kilogram = "kg"
+    case Gram = "g"
+    case Litre = "L"
+    case Millilitre = "ml"
+    case Whole = "Whole"
     var id: Self { self }
 }
 struct Ingredient {
