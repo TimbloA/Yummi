@@ -13,24 +13,25 @@ struct IngredientView: View {
 
     var body: some View {
         NavigationView{
-            Form {
-                VStack{
-                    
-                    IngredientItem(ingredient: currIngredients[valIngredient])
-                    VStack(alignment: .trailing){
-                        Button("Next Ingredient", action: {
-                            if valIngredient == (self.currIngredients.count)-1{
-                                valIngredient = -1
-                            }
-                            valIngredient += 1}).font(.title3).frame(maxWidth: .infinity,alignment:.center)
-                    }
+            Form{
+                Section{
                     VStack{
-                        NewIngredientView(currIngredients: $currIngredients)
+                        
+                        IngredientItem(ingredient: currIngredients[valIngredient])
+                        VStack(alignment: .trailing){
+                            Button("Next Ingredient", action: {
+                                if valIngredient == (self.currIngredients.count)-1{
+                                    valIngredient = -1
+                                }
+                                valIngredient += 1}).font(.title3).frame(maxWidth: .infinity,alignment:.center)
+                        }
                     }
-                    
-                    
-                }.navigationTitle("Yummi")
-            }
+                }
+                Section{
+                    NewIngredientView(currIngredients: $currIngredients)
+                }
+            }.navigationTitle("Yummi")
+
         }
     }
 }
