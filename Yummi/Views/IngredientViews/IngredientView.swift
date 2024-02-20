@@ -13,8 +13,9 @@ struct IngredientView: View {
 
     var body: some View {
         NavigationView{
-            VStack{
-                Form{
+            Form {
+                VStack{
+                    
                     IngredientItem(ingredient: currIngredients[valIngredient])
                     VStack(alignment: .trailing){
                         Button("Next Ingredient", action: {
@@ -23,13 +24,13 @@ struct IngredientView: View {
                             }
                             valIngredient += 1}).font(.title3).frame(maxWidth: .infinity,alignment:.center)
                     }
-                    Section {
-                        VStack{
-                            NewIngredientView(currIngredients: $currIngredients)
-                        }
+                    VStack{
+                        NewIngredientView(currIngredients: $currIngredients)
                     }
-                }
-            }.navigationTitle("Yummi")
+                    
+                    
+                }.navigationTitle("Yummi")
+            }
         }
     }
 }

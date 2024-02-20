@@ -60,21 +60,26 @@ struct NewIngredientView: View {
                         selection: $date,
                         displayedComponents: [.date]
                     )
+                
                 }
             }
         
         
  
-        
-        Button(submitName, action: {
-            if ingredientName != "" && ingredientQuantity != 0 {
-                currIngredients.append(Ingredient(name: ingredientName, quantity: ingredientQuantity, unit: unit, category: category, expiryDate: date))
-                submitName = "Submitted!"
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    resetDisplay()
+        Section{
+            Spacer()
+            Button(submitName, action: {
+                if ingredientName != "" && ingredientQuantity != 0 {
+                    currIngredients.append(Ingredient(name: ingredientName, quantity: ingredientQuantity, unit: unit, category: category, expiryDate: date))
+                    submitName = "Submitted!"
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        resetDisplay()
+                    }
                 }
-            }
-        }).font(.title2)
+            }).font(.title2)
+            
+            
+        }
         
         
         
