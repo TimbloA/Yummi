@@ -32,5 +32,5 @@ struct RecipeItem: View {
 }
 
 #Preview {
-    RecipeItem(recipe:Recipe(Name: "Banana Sundae", Ingredients: [Ingredient(name: "Banana", quantity: 1, unit: .Whole, category: .Fruit)], isFavourite: true, rating: 9))
+    RecipeItem(recipe:Recipe(Name: "Banana Sundae", Ingredients: [Ingredient(name: "Banana", quantity: 1, unit: .Whole, category: .Fruit)], isFavourite: true, rating: 9,Image:"TomatoSandwich"))
 }

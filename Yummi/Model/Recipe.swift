@@ -13,4 +13,5 @@ struct Recipe {
     let Ingredients: [Ingredient]
     var isFavourite: Bool
     var rating: Int
+    var Image: String
 }
