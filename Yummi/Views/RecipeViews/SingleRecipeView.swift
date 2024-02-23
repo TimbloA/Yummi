@@ -12,6 +12,7 @@ struct SingleRecipeView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Text(recipe.Name).font(.title).bold()
                 Section {
                     Image(recipe.Image)
                         .resizable()
@@ -24,7 +25,7 @@ struct SingleRecipeView: View {
                         }
                     }
                 }
-           }.navigationTitle(recipe.Name)
+           }
         }
     }
 }

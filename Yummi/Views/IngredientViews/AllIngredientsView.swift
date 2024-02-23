@@ -10,17 +10,16 @@ import SwiftUI
 struct AllIngredientsView: View {
     @State var currIngredients: [Ingredient]
     var body: some View {
-        NavigationView {
             List {
-                ForEach(currIngredients,id: \.self.name) { ingredient in
-                    Text("ingredient")
+                ForEach(currIngredients,id: \.name) { ingredient in
+                    Text(ingredient.name)
                 }
             }.navigationTitle("All Ingredients")
-        }
-        
     }
 }
 
 #Preview {
-    AllIngredientsView(currIngredients: currentIngredients.examples)
+    NavigationView {
+        AllIngredientsView(currIngredients: currentIngredients.examples)
+    }
 }
