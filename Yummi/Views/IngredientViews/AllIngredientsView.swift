@@ -10,11 +10,15 @@ import SwiftUI
 struct AllIngredientsView: View {
     @State var currIngredients: [Ingredient]
     var body: some View {
-            List {
-                ForEach(currIngredients,id: \.name) { ingredient in
-                    Text(ingredient.name)
-                }
-            }.navigationTitle("All Ingredients")
+        List {
+            ForEach(currIngredients,id: \.name) { ingredient in
+                Text(ingredient.name)
+            }
+            .onDelete(perform: deleteItems)
+        }.navigationTitle("All Ingredients")
+    }
+    func deleteItems(at offsets: IndexSet) {
+        currIngredients.remove(atOffsets: offsets)
     }
 }
 
