@@ -14,4 +14,5 @@ struct Recipe {
     var isFavourite: Bool
     var rating: Int
     var Image: String
+    let Steps: String
 }

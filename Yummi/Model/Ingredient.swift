@@ -50,4 +50,8 @@ struct Ingredient {
               Expiry Date: \(formatDate())
               """
     }
+    
+    func simpleDisplay() -> String {
+        return " \(quantity) \(unit) of \(name)"
+    }
 }

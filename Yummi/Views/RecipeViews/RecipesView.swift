@@ -9,17 +9,28 @@ import SwiftUI
 
 struct RecipesView: View {
     let recipes: [Recipe]
+    @State private var searchText: String = ""
+    var searchResults: [Recipe] {
+        if searchText.isEmpty {
+            return recipes
+        }else {
+            return recipes.filter { $0.Name.contains(searchText)}
+        }
+    }
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
-                ForEach(recipes,id: \.self.Name) { recipe in
+                ForEach(searchResults,id: \.self.Name) { recipe in
                     NavigationLink(destination: SingleRecipeView(recipe: recipe)){
                         RecipeItem(recipe:recipe)
                     }
+                    
                 }
             }.navigationTitle("Recipes")
         }
+        .searchable(text: $searchText)
     }
+   
 }
 
 #Preview {
