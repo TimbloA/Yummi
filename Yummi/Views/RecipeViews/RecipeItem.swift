@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct RecipeItem: View {
-    let recipe: Recipe
+    var recipe: Recipe
     @ State private var star = "star"
    
     var body: some View {
         
         HStack {
-            Image(systemName: checkFavourite())
+            Button(action: {toggleFavourite()}){
+                Image(systemName: checkFavourite())}
             Text(recipe.Name)
             Spacer()
             Image(systemName: "\(recipe.rating).square")
         }
     }
-    
+    func toggleFavourite(){
+        self.recipe.isFavourite.toggle()
+    }
     func checkFavourite() -> String {
         if recipe.isFavourite == true {
             return "star.fill"
