@@ -14,7 +14,7 @@ struct IngredientView: View {
     var body: some View {
         NavigationView{
             if newIngredient == true {
-                Form{
+                Form {
                    
                         Section{
                             VStack{

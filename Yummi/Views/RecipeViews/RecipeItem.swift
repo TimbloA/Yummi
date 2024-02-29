@@ -14,16 +14,16 @@ struct RecipeItem: View {
     var body: some View {
         
         HStack {
-            Button(action: {toggleFavourite()}){
-                Image(systemName: checkFavourite())}
+//            Button(action: {toggleFavourite()}){
+//                Image(systemName: checkFavourite())}
             Text(recipe.Name)
             Spacer()
             Image(systemName: "\(recipe.rating).square")
         }
     }
-    func toggleFavourite(){
-        self.recipe.isFavourite.toggle()
-    }
+//    func toggleFavourite(){
+//        recipe.isFavourite.toggle()
+//    }
     func checkFavourite() -> String {
         if recipe.isFavourite == true {
             return "star.fill"

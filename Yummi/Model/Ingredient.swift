@@ -54,4 +54,8 @@ struct Ingredient {
     func simpleDisplay() -> String {
         return " \(quantity) \(unit) of \(name)"
     }
+    
+    func addNewIngredient(ingredientList: [Ingredient]) -> [Ingredient] {
+        
+    }
 }
