@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NewIngredientView: View {
-    @StateObject var ingredientsViewModel: IngredientsViewModel = IngredientsViewModel()
-    @Binding var currIngredients: [Ingredient]
+    @ObservedObject var ingredientsViewModel: IngredientsViewModel
+  
     var body: some View {
   
     
@@ -52,7 +52,6 @@ struct NewIngredientView: View {
         
  
         Section{
-            Spacer()
             Button(ingredientsViewModel.submitName, action: {
                 if ingredientsViewModel.ingredientName != "" && ingredientsViewModel.ingredientQuantity != 0 {
                     ingredientsViewModel.addNewIngredient()
@@ -67,5 +66,5 @@ struct NewIngredientView: View {
 }
 
 #Preview {
-    NewIngredientView(currIngredients: .constant(currentIngredients.examples))
+    NewIngredientView(ingredientsViewModel: IngredientsViewModel())
 }

@@ -12,6 +12,7 @@ class IngredientsViewModel: ObservableObject{
     var currIngredients: [Ingredient]
     var ingredientName = ""
     var ingredientQuantity = 0
+    var newIngredient: Bool = false
     let range = 1...1000000
     let step = 1
 

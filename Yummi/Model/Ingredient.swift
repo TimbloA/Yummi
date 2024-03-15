@@ -55,7 +55,7 @@ struct Ingredient {
         return " \(quantity) \(unit) of \(name)"
     }
     
-    func addNewIngredient(ingredientList: [Ingredient]) -> [Ingredient] {
-        
-    }
+//    func addNewIngredient(ingredientList: [Ingredient]) -> [Ingredient] {
+//       return
+//    }
 }

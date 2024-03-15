@@ -8,50 +8,33 @@
 import SwiftUI
 
 struct IngredientView: View {
-    @State var currIngredients = currentIngredients.examples
-    @State private var valIngredient = 0
-    @State private var newIngredient: Bool = false
+    @StateObject var ingredientsViewModel: IngredientsViewModel = IngredientsViewModel()
     var body: some View {
         NavigationView{
-            if newIngredient == true {
-                Form {
-                   
-                        Section{
-                            VStack{
-                                
-                                IngredientItem(ingredient: currIngredients[valIngredient])
-                                VStack(alignment: .trailing){
-                                    Button("Next Ingredient", action: {
-                                        if valIngredient == (self.currIngredients.count)-1{
-                                            valIngredient = -1
-                                        }
-                                        valIngredient += 1}).font(.title3).frame(maxWidth: .infinity,alignment:.center)
-                                }
-                            }
-                        }
-                        Section{
-                            NewIngredientView(currIngredients: $currIngredients)
-                        }
-                 
-                    
-                }.navigationTitle("Add New")
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Toggle("Show All", isOn: $newIngredient)
+            VStack{
+                List {
+                    ForEach(ingredientsViewModel.currIngredients,id: \.name) { ingredient in
+                        
+                        NavigationLink(destination: IngredientItem(ingredient: ingredient)){
+                            Text(ingredient.name)
                         }
                     }
-                    }else{
-                        VStack{
-                            AllIngredientsView(currIngredients: currIngredients)
-                        } .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Toggle("Add New", isOn: $newIngredient)
-                            }
-                        }
+                    .onDelete(perform: deleteItems)
+                    Button("Add New Ingredient") {
+                        ingredientsViewModel.newIngredient.toggle()
+                    }.foregroundColor(.blue)
+                }.navigationTitle("All Ingredients")
+                .sheet(isPresented: $ingredientsViewModel.newIngredient) {
+                    Form {
+                        NewIngredientView(ingredientsViewModel: ingredientsViewModel)
+                            .presentationDetents([.medium, .large])
+                    }
+                }
             }
-            
-            
         }
+    }
+    func deleteItems(at offsets: IndexSet) {
+        ingredientsViewModel.currIngredients.remove(atOffsets: offsets)
     }
 }
 
