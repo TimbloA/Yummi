@@ -11,9 +11,9 @@ struct IngredientItem: View {
     let ingredient: Ingredient
     var body: some View {
         VStack(alignment: .leading, spacing:20) {
-            Text("\(ingredient.displayStats())")
-            
-            
+            Form{
+                Text("\(ingredient.displayStats())")
+            }
         }
     }
 }

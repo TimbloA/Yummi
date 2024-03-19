@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IngredientView: View {
-    @StateObject var ingredientsViewModel: IngredientsViewModel = IngredientsViewModel()
+    @State private var ingredientsViewModel = IngredientsViewModel.shared
     var body: some View {
         NavigationView{
             VStack{
@@ -26,7 +26,7 @@ struct IngredientView: View {
                 }.navigationTitle("All Ingredients")
                 .sheet(isPresented: $ingredientsViewModel.newIngredient) {
                     Form {
-                        NewIngredientView(ingredientsViewModel: ingredientsViewModel)
+                        NewIngredientView()
                             .presentationDetents([.medium, .large])
                     }
                 }

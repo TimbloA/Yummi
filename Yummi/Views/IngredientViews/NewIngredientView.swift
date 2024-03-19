@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewIngredientView: View {
-    @ObservedObject var ingredientsViewModel: IngredientsViewModel
+    @State private var ingredientsViewModel = IngredientsViewModel.shared
   
     var body: some View {
   
@@ -23,7 +23,7 @@ struct NewIngredientView: View {
                         in: ingredientsViewModel.range,
                         step: ingredientsViewModel.step
                     ) {
-                        Text("Quantity:\(ingredientsViewModel.ingredientQuantity) ")
+                        Text("Quantity: \(ingredientsViewModel.ingredientQuantity) ")
                     }
                     Picker("Category:",selection: $ingredientsViewModel.category) {
                         Text("Fruit").tag(Category.Fruit)
@@ -66,5 +66,5 @@ struct NewIngredientView: View {
 }
 
 #Preview {
-    NewIngredientView(ingredientsViewModel: IngredientsViewModel())
+    NewIngredientView()
 }

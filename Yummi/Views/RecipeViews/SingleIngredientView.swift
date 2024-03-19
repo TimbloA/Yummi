@@ -10,9 +10,9 @@ import SwiftUI
 struct SingleIngredientView: View {
     let ingredient: Ingredient
     var body: some View {
-        Form{
-            IngredientItem(ingredient: ingredient)
-        }
+        
+        IngredientItem(ingredient: ingredient)
+        
     }
 }
 

@@ -8,23 +8,26 @@
 import SwiftUI
 
 struct RecipesView: View {
-    let recipes: [Recipe]
+    @StateObject var recipeViewModel: RecipeViewModel = RecipeViewModel()
     @State private var searchText: String = ""
     var searchResults: [Recipe] {
         if searchText.isEmpty {
-            return recipes
+            return recipeViewModel.recipes
         }else {
-            return recipes.filter { $0.Name.contains(searchText)}
+            return recipeViewModel.recipes.filter { $0.Name.contains(searchText)}
         }
     }
     var body: some View {
         NavigationStack {
+            Toggle(isOn: $recipeViewModel.filterIngredients) {
+                Text("Filter By Ingredients")
+            }.toggleStyle(.button)
+            
             List {
                 ForEach(searchResults,id: \.self.Name) { recipe in
-                    NavigationLink(destination: SingleRecipeView(recipe: recipe)){
-                        RecipeItem(recipe:recipe)
-                    }
-                    
+                        NavigationLink(destination: SingleRecipeView(recipe: recipe)){
+                            RecipeItem(recipe:recipe)
+                        }
                 }
             }.navigationTitle("Recipes")
         }
@@ -34,5 +37,5 @@ struct RecipesView: View {
 }
 
 #Preview {
-    RecipesView(recipes: Recipes.examples)
+    RecipesView()
 }

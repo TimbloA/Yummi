@@ -9,6 +9,7 @@ import Foundation
 
 @Observable
 class IngredientsViewModel: ObservableObject{
+    static let shared = IngredientsViewModel()
     var currIngredients: [Ingredient]
     var ingredientName = ""
     var ingredientQuantity = 0
@@ -28,7 +29,7 @@ class IngredientsViewModel: ObservableObject{
 
     var submitName: String = "Submit Ingredient"
     
-    init() {
+    private init() {
         currIngredients = currentIngredients.examples
     }
     
